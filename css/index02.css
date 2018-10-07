@@ -1,26 +1,52 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline}
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display: block}
-body {line-height: 1}
-a{text-decoration: none;}
-ol,ul {list-style: none}
-blockquote,q {quotes: none}
-blockquote:before,blockquote:after,q:before,q:after {content: '';content: none}
-fix_clear:aft{content:"";display:block;clear:both;height:0;
-overflow:hidden;visibility:hidden;}
-/* img{display: inline} */
-table {border-collapse: collapse;border-spacing: 0}
-fix_clear{zoom:1;}/*IE兼容*/
-
 .page-main{
     width:1349px;
     background: #f5f5f5;
     padding-top: 22px;
+    /* height: 5654px; */
 }
 .page-main-center{
     width: 1226px;
     margin: 0 auto;
 }
 /* 手机 */
+.main-phone{
+    margin-bottom: 8px;
+}
+.phone-center{
+    height: 628px;
+}
+.normal-top{
+    position: relative;
+}
+.normal-more{
+    position: absolute;
+    right: 0;
+    top:0;
+}
+.phone-top .phone-more a{
+    /* display: block; */
+    font-size: 16px;
+    line-height: 58px;
+    color: #424242;
+}
+.phone-more a:hover{
+    color: #ff6709;
+}
+.phone-top .phone-more .iconfont{
+    width: 12px;
+    height: 12px;
+    padding: 4px 6px;
+    margin-left: 4px;
+    border-radius: 16px;
+    font-size: 12px;
+    line-height: 12px;
+    background: #b0b0b0;
+    color: #fff;
+    vertical-align: 1px;
+}
+.phone-more a:hover .iconfont{
+    background: #ff6709;
+}
 .phone-left{
      float: left;
 }
@@ -37,6 +63,7 @@ fix_clear{zoom:1;}/*IE兼容*/
 .brick-list{
     width: 992px;
     height: 614px;
+    margin:0 0 -14px -14px;
 }
 .brick-item{
     width: 234px;
@@ -48,9 +75,130 @@ fix_clear{zoom:1;}/*IE兼容*/
     margin-left: 14px;
     margin-bottom: 14px;
     background: #fff;
+    text-align: center;
 }
-
+.brick-item:hover{
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0,-2px,0);
+}
+.brick-item .brick-img{
+    display: block;
+    margin: 0 auto 18px;
+}
+.brick-item .title{
+    margin: 0 20px 11px;
+    font-size: 14px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.brick-item .desc{
+    height: 18px;
+    margin: 0 20px 12px;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    _zoom: 1;
+    color: #b0b0b0;
+}
+.brick-item .price{
+    margin: 0;
+    color: #ff6709;
+}
+.brick-item del{
+    color: #b0b0b0;
+}
+.brick-item .flag{
+    background-color: #e53935;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    z-index: 2;
+    width: 64px;
+    height: 20px;
+    margin-left: -32px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    /* color: #fff; */
+}
+.phone-bottom{
+    margin: 28px 0 22px;
+}
 /* 家电 */
+.main-jiadian{
+
+}
+.jiadian-more .tab-list{
+    margin: 0;
+    padding: 16px 0 0;
+    font-size: 16px;
+}
+.jiadian-more .tab-list li{
+    margin-left: 29px;
+    /* float: left; */
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px 0;
+}
+.tab-list li.tab-active{
+    color: #ff6700;
+    border-bottom: 2px solid #ff6700;
+}
+.tab-list li:hover{
+    color: #ff6700;
+    border-bottom: 2px solid #ff6700;
+}
+.jiadian-left{
+    width: 234px;
+    float: left;
+}
+.jiadian-item-1{
+    padding: 0;
+    margin: 0 0 14px 0;
+    height: 300px;
+}
+.jiadian-item-1 img{
+    height: 300px;
+}
+.jiadian-item-1:hover{
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0,-2px,0);
+}
+.hidden-item{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 234px;
+    height: 0px;
+    overflow: hidden;
+    font-size: 12px;
+    background: #ff6700;
+    display: none;
+}
+.hidden-item a{
+    display: block;
+    padding: 8px 30px;
+    color: #fff;
+    text-align: left;
+}
+.hidden-item span{
+    line-height: 18px;
+}
+.hidden-item span.author{
+    color: rgba(255, 255, 255, 0.6);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.brick-item-m:hover .hidden-item{
+    display: block;
+    height: 76px;
+}
 /* 智能 */
 /* 搭配 */
 /* 配件 */
