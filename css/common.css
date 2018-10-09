@@ -11,23 +11,22 @@ overflow:hidden;visibility:hidden;}
 table {border-collapse: collapse;border-spacing: 0}
 fix_clear{zoom:1;}/*IE兼容*/
 
-.site-topbar{
+.nav{
     width:1349px;
+    background-color: #333333;
 }
-.container{
+.container,.site-topbar{
     /* margin-left: 56px; */
     width: 1226px;
     margin: 0 auto;
 }
-
 /* nav */
 .site-topbar{
     height: 40px;
-    background-color: #333333;
 }
 .site-topbar .site-topbar-left{
     float: left;
-    margin-left: 55px;
+    /* margin-left: 55px; */
 }
 .site-topbar-left li,.site-topbar-right li{
     float: left;
@@ -47,6 +46,7 @@ fix_clear{zoom:1;}/*IE兼容*/
     margin: 0;
     border: none;
     position: relative;
+    background: #424242;
 }
 .site-topbar .last_li_nob{
     border: none;

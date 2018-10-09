@@ -1,0 +1,397 @@
+.container,.site-topbar,.pro-header,.pro-main{
+    /* margin-left: 56px; */
+    width: 1224px;
+    margin: 0 auto;
+}
+.site-topbar-right .last_car a {
+    display: inline-block;
+    padding: 14px 22px;
+}
+.container-nav {
+    float: left;
+    margin-left: 68px;
+}
+
+/* 小米8 指纹版 */
+.pro{
+    z-index: 4;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    -webkit-box-shadow: 0px 5px 5px rgba(0,0,0,0.07);
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.07);
+}
+.pro-header{
+    /* position: relative; */
+    height: 63px;
+    /* width: 100%; */
+    margin-top: 0;
+    color: #616161;
+    
+}
+.pro-header .pro-h3{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 60px;
+    color: #212121;
+    float: left;
+}
+.pro-header .pro-right{
+    float: right;
+    margin: 17px 0 0 0;
+    font-size: 14px;
+}
+.pro-header .pro-right a{
+    color: #616161;
+}
+.pro-header .pro-right .sp{
+    color: #e0e0e0;
+    margin: 4px;
+}
+
+/* 提示 */
+.tip{
+    background: #f7f7f7;
+    width: 100%;
+    text-align: center;
+    height: 43px;
+    /* line-height: 43px; */
+    color: #333;
+    margin-top: 5px;
+    font-size: 14px;
+    padding-top: 7px;
+}
+.tip .tip-login{
+    color: #ff6700;
+    margin-left: 25px;
+}
+.tip .tip-delete{
+    font-weight: 900;
+    color: #b5b5b5;
+    font-size: 18px;
+}
+
+/* 商品主要内容 */
+.pro-main{
+    /* height: 1255px; */
+    height: 1211px;
+    padding-top: 32px;
+    padding-bottom: 12px;
+    /* position: relative; */
+}
+.pro-main .pro-view-choose{
+    position: relative;
+    float: left;
+    height: 600px;
+    margin-left: 0;
+    position: relative;
+    float: left;
+    width:606px;
+    margin-left: 0;
+}
+.pro-main .pro-view-choose .pro-fix{
+    width: 560px;
+    height: 560px;
+    overflow: hidden;
+}
+.pro-main .pro-info{
+    float: right;
+    margin-left: 12px;
+    width: 606px;
+    min-height: 1px;
+}
+.pro-info .pro-title{
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: normal;
+    color: #212121;
+}
+.pro-info .sale-desc{
+    color: #b0b0b0;
+    margin: 0;
+    padding: 0;
+    padding-top: 8px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.pro-info .pro-price{
+    display: block;
+    font-size: 18px;
+    line-height: 1;
+    color: #ff6700;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 12px 0 20px;
+}
+.pro-info .flow-wrap{
+    font-size: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.pro-info .flow-wrap .flow-tag{
+    display: inline-block;
+    width: 80px;
+    padding: 2px 0;
+    text-align: center;
+    background: #ff6700;
+    color: #fff;
+}
+.pro-info .flow-wrap .flow-name{
+    width: 430px;
+    line-height: 26px;
+    margin-left: 5px;
+}
+/* 主要内容 */
+.info-main-wrap{
+
+}
+.address-wrap{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.address-wrap .default-address{
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    padding-left: 50px;
+    padding: 30px 40px 30px 32px;
+    font-size: 14px;
+    height: 42px;
+}
+.address-wrap .default-address .item{
+    margin-right: 14px;
+}
+.default-address .item a,.state{
+    color: #ff6700;
+    line-height: 21px;
+}
+
+.list-wrap{
+    margin-top: 30px;
+}
+.common-list{
+    margin-bottom: 30px;
+    height: 78px;
+}
+.list-wrap .list-title{
+    line-height: 1;
+    font-size: 18px;
+}
+.common-list .choose-version{
+    height: 59px;
+    margin-left: -6px;
+    padding-top: 1px;
+}
+.list-wrap ul li{
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    float: left;
+}
+.list-wrap .common-list li{
+    margin-left: 6px;
+    margin-top: 15px;
+    line-height: 42px;
+    height: 42px;
+    width: 298px;
+}
+.common-list .choose-version .version-1{
+    border-color: #ff6700;
+    /* color: #ff6700; */
+}
+.common-list .choose-version a{ 
+    display: block;
+    text-align: left;
+    margin: 0;
+    padding: 0 27px;
+}
+.common-list .choose-version .version-1 a{
+    color: #ff6700;
+}
+.common-list .choose-version .version-2 a{
+    color: #333;
+}
+.list-1 .choose-version .version-1 .price{
+    float: right;
+    color: #757575;
+}
+.choose-version .price{
+    float: right;
+    color: #b0b0b0;
+}
+.list-2 img{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+.list-2 .choose-2 a{
+    margin: 0 10px;
+    text-align: center;
+}
+.list-2 .version-2{
+    border-style: dashed;
+}
+.list-3 .list-title{
+    margin-bottom: 15px;
+}
+.list-3 .list-title a{
+    font-size: 14px;
+    color: #ff6700;
+    float: right;
+}
+.list-3 .last-ul{
+    max-height: 706px;
+    overflow-y: auto;
+    width: 100%;  
+}
+.list-3 .last-ul li{
+    background: #fff;
+    cursor: pointer;
+    padding: 30px 0;
+    float: none;
+    border: 1px solid #e0e0e0;
+    height: 90px;
+}
+.list-3 .last-ul .circle{
+    display: block;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    line-height: 36px;
+    float: left;
+    cursor: pointer;
+    border: 1px solid #b5b5b5;
+    margin: 20px 20px 20px 40px;
+}
+.list-3 .last-ul img{
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    margin-left: 10px;
+    float: left;
+}
+.list-3 .last-ul div{
+    width: 370px;
+    overflow: hidden;
+    float: left;
+}
+.list-3 .last-ul div .name{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.list-3 .last-ul div .desc{
+    font-size: 14px;
+    height: 18px;
+    color: #b0b0b0;
+    width: 286px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.list-3 .last-ul div p{
+    margin-top: 8px;
+}
+.list-3 .last-ul div .agreement{
+    font-size: 14px;
+    color: #757575;
+}
+.list-3 .last-ul div .agreement i{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #b5b5b5;
+    margin-right: 5px;
+    margin-top: 2px;
+    border-radius: 2px;
+}
+.agreement a {
+    color: #ff6700;
+    margin: 0;
+    display: inline-block;
+}
+.agreement a span{
+    color: #757575;
+    margin: 0 5px;
+}
+.list-3 .last-ul div .price{
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    color: #757575;
+}
+
+.info-main-wrap .pro-list {
+    background: #f9f9fa;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+.pro-list li{
+    line-height: 30px;
+    color: #616161;
+}
+.pro-list li span{
+    float: right;
+}
+.pro-list ul .totlePrice {
+    color: #ff6700;
+    font-size: 24px;
+    padding-top: 20px;
+}
+.info-main-wrap .btn-wrap{
+    margin: 10px 0 20px 0;
+}
+.info-main-wrap .btn-wrap li{
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: text-top;
+}
+.info-main-wrap .btn-wrap .add{
+    display: inline-block;
+    background: #ff6700;
+    border-color: #ff6700;
+    color: #fff;
+    width: 298px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+.info-main-wrap .btn-wrap .like{
+    display: inline-block;
+    width: 140px;
+    height: 52px;
+    line-height: 52px;
+    background: #b0b0b0;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+}
+.info-main-wrap a{
+    display: inline-block;
+    cursor: default;
+    white-space: nowrap;
+    color: #b0b0b0;
+    font-size: 14px;
+}
+.info-main-wrap a span{
+    display: inline-block;
+    margin-right: 15px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+.info-main-wrap a span em{
+    font-style: normal;
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
+}

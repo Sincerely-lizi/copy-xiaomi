@@ -1,0 +1,177 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display: block}
+body {line-height: 1}
+a{text-decoration: none;}
+ol,ul {list-style: none}
+blockquote,q {quotes: none}
+blockquote:before,blockquote:after,q:before,q:after {content: '';content: none}
+fix_clear:aft{content:"";display:block;clear:both;height:0;
+overflow:hidden;visibility:hidden;}
+/* img{display: inline} */
+table {border-collapse: collapse;border-spacing: 0}
+fix_clear{zoom:1;}/*IE兼容*/
+body{
+    width: 1349px;
+}
+.logo{
+    width: 1130px;
+    margin: 0 auto;
+}
+.logo a{
+    display: block;
+    height: 98px;   
+}
+.banner{
+    width: 100%;
+    height: 588px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: url(../images/login_img/banner.jpg);
+}
+.form-panel{
+    z-index: 5;
+    position: absolute;
+    right: 107px;
+    top: 32px;
+    background:#fff;
+    width: 410px;
+    min-height: 524px;
+    font-size: 14px;
+}
+.form-panel .nav_tabs_panel .nav_tabs{
+    padding: 27px 0 24px;
+    width: 410px;
+    text-align: center;
+    font-size: 24px;
+    color: #e0e0e0;
+    line-height: 32px;
+}
+.form-panel .nav_tabs_panel .nav_tabs .now{
+    color: #f56600;
+}
+.form-panel .nav_tabs_panel .nav_tabs a{
+    color: #666;
+}
+.form-panel .nav_tabs_panel .nav_tabs .line{
+    margin: 0 35px 0 42px;
+}
+
+.login-area{
+
+}
+.login-area input{
+    width: 330px;
+    height: 48px;
+    border: 1px solid #e0e0e0;
+    margin-top: 14px;
+    margin-left: 30px;
+    font-size: 12px;
+    color: #9d9d9d;
+    padding-left: 16px;
+}
+.login-area .btn{
+    width: 348px;
+    background-color: #ef5b00;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+.login-area span{
+    font-size: 14px;
+    color: #ef5b00;
+}
+.login-area .sp{
+    line-height: 20px;
+    margin-left: 30px;
+    margin-top: 11px;
+}
+.login-area .sp1{
+    float: left; 
+}
+.login-area .sp2{
+    color: #999999;
+    margin-left: 95px;
+}
+
+.another{
+    margin-top: 130px;
+    text-align: center;
+}
+.another fieldset{
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+}
+.another fieldset legend{
+    color: #bbb;
+    font-size: 14px;
+    margin: 0 auto;
+    text-align: center;
+}
+.another-login{
+    padding-top: 3px;
+} 
+.another-login a{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 17px;
+}
+.another-login .qq{
+    background: #0288d1 url(../images/login_img/icons_type.png) no-repeat -26px -1px;
+    background-size: 158px  30px;
+}
+.another-login .wb{
+    background: #d32f2f url(../images/login_img/icons_type.png) no-repeat -54px 0px;
+    background-size: 158px  30px;
+}
+.another-login .zfb{
+    background: #0ae url(../images/login_img/icons_type.png) no-repeat -85px 0px;
+    background-size: 158px  30px;
+}
+.another-login .wx{
+    background: #00d20d url(../images/login_img/icons_type.png) no-repeat -105px 0px;
+    background-size: 134px  30px;
+}
+#foot{
+    margin-top: 100px;
+}
+#foot{
+    width:100%;
+    height:132px;
+}
+.foot_box{
+    width:569px;
+    height:79px;
+    margin:0 auto;
+    padding-top:53px;
+}
+.foot_box .foot_top{
+    margin-left: 124px;
+}
+.foot_box .foot_top li{
+    float:left;
+    padding-left:12px;
+    padding-right:12px;
+     background: url(../images/login_img/jt.jpg)no-repeat center right;
+}
+.foot_box .foot_top li:last-child{
+    background: none;
+}
+.foot_box .foot_top li a{
+    display: block;
+    font-size:12px;
+    color:#757575;
+}
+.foot_box .foot_bottom li{
+    float:left;
+    margin-top:11px;
+}
+.foot_box .foot_bottom li:first-child{
+    margin-left:30px;
+}
+.foot_box .foot_bottom li a{
+    font-size:12px;
+    color:#757575;
+}
