@@ -11,13 +11,17 @@
 		<div class="header"></div>
 		<h2>注册小米账号</h2>
 		<form class="check" onsubmit="return false">
-			<h3>国家/地区</h3>
-			<div class="check_one"><input name="username" class="inp_first" type="text" required="required" /><button class="btn_top"></button></div>
-			<h4>注册成功后，国家/地区将不能被修改</h4>
-			<h5>手机号码</h5>
-			<div class="check_two"><button class="btn_center">+86</button><input name="password" type="password" required="required" class="inp_two"/></div>
-			<button class="btn_buttom" name="login-btn">立即注册</button>
-			
+			<div class="check_one">
+				<label for="account">账户</label>
+				<input name="username" class="inp_first" id="account" type="text" placeholder="请输入手机号或邮箱"/>
+				<input type="text" name="name_X" class="name_X" placeholder="账号格式不正确">
+			</div>
+			<div class="check_two">
+				<label for="pass">密码</label>
+				<input name="password" class="inp_two" id="pass" type="password" placeholder="请输入密码"/>
+				<input type="text" name="pass_X" class="pass_X" placeholder="密码格式不正确">
+			</div>
+			<button class="btn_buttom" name="login-btn">立即注册</button>	
 		</form>
 		<div class="artical">
 				<span>注册账号即表示您同意并愿意遵守小米</span>
@@ -42,10 +46,12 @@
 			</ul>
 		</div>
 	</div>
-	<script src="js/zhuceajax.js"></script>
-	<script src="js/zhuce.js"></script>
+	<script src="js/check.js"></script>
+	<script src="js/common/ajax.js"></script>
+    <script src="js/register.js"></script>
 	<script>
-        register.init('.check');
-    </script>
+		register.init('.check');
+		check.init('.check');
+	</script>
 </body>
 </html>

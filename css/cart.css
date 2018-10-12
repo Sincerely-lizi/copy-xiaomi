@@ -1,0 +1,191 @@
+.header{
+    width: 1349px;
+    line-height: 100px;
+    font-size: 12px;
+    border-bottom: 2px solid #ff6700;
+    position: relative;
+    z-index: 20;
+    height: 100px;
+}
+.header-center{
+    width: 1226px;
+    margin: 0 auto;
+}
+.header img{
+    float: left;
+    margin-right: 45px;
+    margin-top: 26px;
+    width: 48px;
+    height: 48px;
+}
+.header h3{
+    float: left;
+    font-size: 28px;
+    color: #424242;
+}
+.header .login{
+    float: right;
+    font-size: 12px;
+}
+.header .login a{
+    color: #757575;
+}
+.header .login span{
+    color: #e0e0e0;
+}
+
+.page-main{
+    padding-top: 38px;
+    padding-bottom: 38px;
+    background: #f5f5f5;
+}
+.page-main .page-container{
+    width: 1226px;
+    margin: 0 auto;
+}
+.page-container .cart-empty{
+    height: 273px;
+    padding-left: 558px;
+    margin: 65px 0 130px;
+    background: url(../images/cart_img/cart-empty.jpg) no-repeat 124px 0;
+    color: #b0b0b0;
+    overflow: hidden;
+}
+.cart-empty h2{
+    margin-top: 50px;
+    margin-bottom: 0;
+    margin: 70px 0 15px;
+    font-size: 36px;
+}
+.cart-empty .login-desc{
+    margin: 0 0 20px;
+    font-size: 20px;
+    color: #b0b0b0;
+}
+.cart-empty .btn{
+    display: inline-block;
+    width: 170px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 14px;
+    text-align: center;
+}
+.cart-empty .login-btn{
+    display: inline-block;
+    margin-right: 10px;
+    background: #ff6700;
+    border-color: #ff6700;
+    color: #fff;
+}
+.cart-empty .index-btn{
+    border: 1px solid #ff6700;
+    background-color: #f5f5f5;
+    color: #ff6700;
+}
+.login-btn:hover {
+    background-color: #f25807;
+}
+.index-btn:hover{
+    border-color: #f25807;
+}
+
+/* 推荐 */
+.cart-recommend{
+    margin: 60px 0 0;
+    width: 1226px;
+}
+.cart-recommend .xm-recommend-title{
+    position: relative;
+    margin: 0;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 400;
+    color: #757575;
+    border-top: 1px solid #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+}
+.xm-recommend-title span {
+    position: absolute;
+    top: -20px;
+    left: 372px;
+    height: 40px;
+    width: 482px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    background-color: #f5f5f5;
+}
+.cart-recommend{
+
+}
+.cart-recommend .row{
+    margin-left: -14px;
+}
+.row:before, .row:after {
+    content: " ";
+    clear: both;
+    height: 0;
+    display: table;
+}
+.cart-recommend .row .brick-item{
+    /* display: list-item; */
+    float: left;
+    position: relative;
+    height: 300px;
+    width: 194px;
+    min-height: 1px;
+    margin-bottom: 14px;
+    margin-left: 14px;
+    padding: 0 20px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+.cart-recommend .row .brick-item .brick-img{
+    display: block;
+    padding: 40px 0 15px;
+    height: 145px;
+}
+.row .brick-item .brick-img img{
+    width: 140px;
+    height: 140px;
+}
+.row .brick-item .name{
+    margin-bottom: 10px;
+    height: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.row .brick-item .name a{
+    color: #333;
+}
+.row .brick-item .price{
+    margin-bottom: 10px;
+    color: #ff6700;
+}
+.row .brick-item .tips{
+    position: relative;
+    color: #757575;
+}
+.row .brick-item .tips .flag{
+    position: absolute;
+    left: 37px;
+    top: 0;
+    width: 120px;
+    height: 28px;
+    font-size: 12px;
+    line-height: 28px;
+    border: 1px solid #ff6700;
+    background: #fff;
+    color: #ff6700;
+    display: none;
+}
+.brick-item:hover >.tips .flag{
+    display: block;
+}
+.tips .flag:hover{
+    display: block;
+    background: #ff6700;
+    color: #fff;
+}

@@ -134,13 +134,36 @@
     float: left;
     width: 296px;
     height: 374px;
-    padding: 45px 0 0;
+    padding: 45px 0 0 !important;
     border-top: 1px solid #e0e0e0;
-    margin-right: 14px;
+    margin-right: 14px !important;
     /* margin-bottom: 14px; */
     background: #fff;
     text-align: center;
     border-top: 1px solid #ffac13;
+}
+.content-item .iconfont{
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 20px;
+    height: 24px;
+    padding: 12px 0;
+    margin-top: -20px;
+    font-size: 18px;
+    line-height: 24px;
+    background-image: none;
+    background-color: rgba(66,66,66,0.2);
+    color: #fff;
+    opacity: 0;
+    transition: all .6s;
+    outline: none;
+}
+.content-item .icon-jiantou-copy{
+    left: 0;
+}
+.content-item .icon-jiantou{
+    right: 0;
 }
 .content-item-1{
     margin-left: 0;
@@ -192,6 +215,22 @@
     text-align: center;
     color: #333;
 }
+.content-item .duokan{
+    color: #ffac13;
+    display: block;
+    border: 1px solid #ffac13;
+    width: 118px;
+    height: 28px;
+    font-size: 12px;
+    line-height: 28px;
+    text-align: center;
+    margin: 0 auto 15px;
+    /* margin: 0 10px 15px; */
+}
+.content-item .duokan:hover{
+    background-color: #ffac13;
+    color: #fff;
+}
 .content-item .brick-img {
     display: block;
     width: 216px;
@@ -204,36 +243,23 @@
 }
 .content-item .sp{
     position: absolute;
-    bottom: 15px;
+    bottom: 15px !important;
     left: 0;
-    width: 296px;
+    width: 296px !important;
 }
-.content-item .sp li{
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    padding: 10px;
-    margin: 0 2px;
-    cursor: pointer;
+.sp .swiper-pagination-bullet{
+    width: 6px !important;
+    height: 6px !important;
+    margin: 0 5px !important;
+    border-radius: 10px !important;
+    background: #757575 !important;
+    border: 2px solid #b0b0b0;
+    border-color: #fff !important;
 }
-.content-item .sp span{
-    border-color: #fff;
-    display: block;
-    width: 6px;
-    height: 6px;
-    border-radius: 6px;
-    text-align: left;
-    text-indent: -99em;
-    overflow: hidden;
-    background-color: #b0b0b0;
-}
-.content-item .sp li{
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    padding: 10px;
-    margin: 0 2px;
-    cursor: pointer;
+.sp .swiper-pagination-bullet-active{
+    border-color: #ff6700 !important;
+    background: #fff !important;
+    outline: none;
 }
 .content-item .sp .page:hover{
     background-color: #ffac13;
@@ -245,6 +271,9 @@
 .content-item:hover{
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     transform: translate3d(0,-2px,0);
+}
+.content-item:hover > .iconfont{
+    opacity: 1;
 }
 
 /* 视频 */

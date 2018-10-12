@@ -40,10 +40,10 @@ fix_clear{zoom:1;}/*IE兼容*/
 }
 .site-topbar .site-topbar-right{
     float: right;
-    margin-right: 61px;
 }
 .site-topbar-right .last_car{
     margin: 0;
+    padding: 0;
     border: none;
     position: relative;
     background: #424242;
@@ -58,18 +58,19 @@ fix_clear{zoom:1;}/*IE兼容*/
 .site-topbar-right .right-hidden-car{
     position: absolute;
     width: 194px;
-    height: 95px;
+    height: 0px;
     background: #ffffff;
-    /* background: red; */
+    z-index: 3;
     top: 40px;
-    right: 7px;
+    right: 0px;
     padding: 0 62px;
-    display: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s;
+    color: rgba(66,66,66,0);
 }
 .site-topbar-right .right-hidden-car span{
     line-height: 95px;
     font-size:12px;
-    color: #424242;
 }
 
 .site-topbar-left li a:hover{
@@ -78,18 +79,20 @@ fix_clear{zoom:1;}/*IE兼容*/
 .site-topbar-right li a:hover{
     color: #ffffff;
 }
-.site-topbar-right .last_car a:hover{
+.site-topbar-right .cart:hover{
     background-color: #ffffff;
     color: #ff6700;
 }
-.last_car a:hover .right-hidden-car{
-    background: #ff6700;
-    display: block;
+.site-topbar-right .cart:hover >a{
+    color: #ff6700;
+}
+.site-topbar-right .last_car .cart:hover + .right-hidden-car{
+    height: 98px;
+    color: rgba(66,66,66,1);
 }
 /* container */
 .container{
     height: 100px;
-    /* background: #b0b0b0; */
     position: relative;
 }
 .container .logo,.sale{
@@ -106,15 +109,96 @@ fix_clear{zoom:1;}/*IE兼容*/
     float: left;
     margin-left: 10px;
 }
-.container-nav li{
+.container-nav .nav-item{
     float: left;
 }
-.container-nav li a{
+.container-nav .nav-item .link{
     color: #333333;
     font-size: 16px;
     padding: 0 10px;
     line-height: 100px;
 }
+/* 触发隐藏 */
+.nav-item .hidden-container{
+    position: absolute;
+    top: 100px;
+    left: -62px;
+    z-index: 24;
+    width: 1349px;
+    padding: 0 56px;
+    border-top: 1px solid #e0e0e0;
+    background: #fff;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.18);
+    height: 0;
+    opacity: 0;
+    transition: all .2s;
+    display: none;
+}
+.hidden-container .child-list li{
+    position: relative;
+    float: left;
+    width: 180px;
+    padding: 35px 12px 0;
+    text-align: center;
+    font-size: 12px;
+}
+.hidden-container .child-list .pro-img{
+    display: inline-block;
+    width: 160px;
+    height: 110px;
+    margin: 0 auto 16px;
+    text-align: center;
+}
+.hidden-container .child-list .pro-img img {
+    width: 160px;
+    height: 110px;
+}
+.hidden-container .child-list .title{
+    line-height: 20px;
+}
+.hidden-container .child-list .title a{
+    color: #333;
+}
+.hidden-container .child-list .price{
+    line-height: 20px;
+    color: #ff6700;
+}
+.hidden-container .child-list .flag{
+    position: absolute;
+    top: -1px;
+    left: 70px;
+    z-index: 1;
+    /* width: 64px; */
+    font-size: 12px;
+    text-align: center;
+    height: 18px;
+    padding: 1px 20px;
+    border: 1px solid #ff6700;
+    color: #ff6700;
+}
+.hidden-container .child-list .first:before{
+    width: 0px;
+}
+.hidden-container .child-list li:before {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    z-index: 1;
+    width: 1px;
+    height: 100px;
+    content: "";
+    background-color: #e0e0e0;
+}
+.container-nav .nav-item .link:hover{
+    color:#ff6700;
+}
+.container-nav .nav-item .link:hover + .hidden-container {
+    height: 229px;
+    opacity: 1;
+    display: block;
+}
+
+
 .header-search{
     float: right
 }
@@ -142,9 +226,6 @@ fix_clear{zoom:1;}/*IE兼容*/
     background: #fff url(../images/index_img/search-1.png) no-repeat 13px 12px;
     background-size: 50% 50%;
     color: #616161;
-}
-.container-nav li a:hover{
-    color:#ff6700;
 }
 .header-search .search-btn:hover{
     background: #ff6700 url(../images/index_img/search-2.png) no-repeat 13px 12px;

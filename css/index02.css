@@ -77,6 +77,10 @@
     background: #fff;
     text-align: center;
 }
+.phone-left:hover{
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0,-2px,0);
+}
 .brick-item:hover{
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     transform: translate3d(0,-2px,0);
@@ -178,7 +182,9 @@
     overflow: hidden;
     font-size: 12px;
     background: #ff6700;
-    display: none;
+    /* display: none; */
+    opacity: 0;
+    transition: all .6s;
 }
 .hidden-item a{
     display: block;
@@ -196,7 +202,8 @@
     overflow: hidden;
 }
 .brick-item-m:hover .hidden-item{
-    display: block;
+    /* display: block; */
+    opacity: 1;
     height: 76px;
 }
 /* 智能 */
