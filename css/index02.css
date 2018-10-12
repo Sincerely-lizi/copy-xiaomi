@@ -85,9 +85,13 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     transform: translate3d(0,-2px,0);
 }
-.brick-item .brick-img{
+.phone-right .brick-item .brick-img{
     display: block;
     margin: 0 auto 18px;
+}
+.phone-right .brick-item .brick-img img{
+    width: 160px;
+    height: 160px;
 }
 .brick-item .title{
     margin: 0 20px 11px;
@@ -156,8 +160,10 @@
     color: #ff6700;
     border-bottom: 2px solid #ff6700;
 }
+
 .jiadian-left{
     width: 234px;
+    height: 614px;
     float: left;
 }
 .jiadian-item-1{
@@ -167,6 +173,7 @@
 }
 .jiadian-item-1 img{
     height: 300px;
+    width: 234px; 
 }
 .jiadian-item-1:hover{
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);

@@ -74,27 +74,47 @@
 
 /* 商品主要内容 */
 .pro-main{
-    /* height: 1255px; */
+    width: 1224px;
+    margin: 0 auto;
     height: 1211px;
     padding-top: 32px;
     padding-bottom: 12px;
-    /* position: relative; */
+    position: relative;
 }
+/* 轮播图 */
 .pro-main .pro-view-choose{
     position: relative;
     float: left;
     height: 600px;
     margin-left: 0;
-    position: relative;
-    float: left;
     width:606px;
-    margin-left: 0;
+    min-height: 1px;
 }
-.pro-main .pro-view-choose .pro-fix{
+.pro-main .pro-view-choose .img-icon{
+    position: fixed;
     width: 560px;
-    height: 560px;
-    overflow: hidden;
+    /* top: 97px; */
+    z-index: 1;
+    left: 1px;
+    margin-top: 0;
 }
+.pro-view-choose .img-icon .img-wrapper{
+    position: relative;
+    margin: 0;
+}
+.img-icon .img-wrapper .img-wrap{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 560px;
+}
+.img-wrapper .btn-left ,.img-wrapper .btn-right{
+    outline: none;
+}
+.img-wrapper .pro-page{
+    outline: none;
+}
+/* 商品信息 */
 .pro-main .pro-info{
     float: right;
     margin-left: 12px;

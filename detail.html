@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.0/css/swiper.min.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/detail.css">
     <title>小米8 屏幕指纹版立即购买-小米商城</title>
@@ -37,11 +38,25 @@
         <a href="#" class="tip-delete">×</a>
     </div>
     <div class="pro-main">
+        <!-- 轮播图 -->
         <div class="pro-view-choose">
-            <div class="fix">
-                <img src="images/detail_img/info.png" alt="">
+            <div class="img-icon">
+                <div class="img-wrapper swiper-container">
+                    <div class="img-wrap swiper-wrapper">
+                        <img class="swiper-slide" src="images/detail_img/pro-img01.jpg" alt="">
+                        <img class="swiper-slide" src="images/detail_img/pro-img02.jpg" alt="">
+                        <img class="swiper-slide" src="images/detail_img/pro-img03.jpg" alt="">
+                        <img class="swiper-slide" src="images/detail_img/pro-img04.jpg" alt="">
+                    </div>
+                    <div class="swiper-button-prev btn-left"></div><!--左箭头-->
+                    <div class="swiper-button-next btn-right"></div><!--右箭头-->
+                    <div class="swiper-pagination pro-page"></div>
+                </div>
+                <!-- 分页器 -->
+                <!-- 左右按钮 -->
             </div>
         </div>
+        <!-- 商品信息 -->
         <div class="pro-info">
             <h1 class="pro-title">小米8 屏幕指纹版</h1>
             <p class="sale-desc">
@@ -171,11 +186,29 @@
 
     <!-- 底部 -->
     <div class="page-bottom"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.0/js/swiper.min.js"></script>
     <script src="js/jquery.js"></script>
     <script>
         $(".top").load("public.html .nav");
         $(".top2").load("public.html .container");
         $(".page-bottom").load("public.html .footer");
+        $(".pro-info").scroll(function () {
+            // $("pro-view-choose").css({"margin-top" :"600"});
+            console.log(1);
+        });
+        var proSwiper = new Swiper('.img-wrapper', {
+	        autoplay: true,//可选选项，自动滑动
+            effect: 'fade',
+            loop : true,
+            navigation: {
+                nextEl: '.btn-right',
+                prevEl: '.btn-left',
+            },
+            pagination: {
+                el: '.pro-page',
+                clickable: true,
+            }
+        })
     </script>
 </body>
 </html>
