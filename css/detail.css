@@ -14,6 +14,7 @@
 
 /* 小米8 指纹版 */
 .pro{
+    width: 100%;
     z-index: 4;
     background: #fff;
     border-top: 1px solid #e0e0e0;
@@ -26,6 +27,7 @@
     height: 63px;
     /* width: 100%; */
     margin-top: 0;
+    margin: 0 auto;
     color: #616161;
     
 }
@@ -61,6 +63,8 @@
     margin-top: 5px;
     font-size: 14px;
     padding-top: 7px;
+    transition: all .3s;
+    -webkit-transition: all .3s;
 }
 .tip .tip-login{
     color: #ff6700;
@@ -78,7 +82,7 @@
     margin: 0 auto;
     height: 1211px;
     padding-top: 32px;
-    padding-bottom: 12px;
+    padding-bottom: 142px;
     position: relative;
 }
 /* 轮播图 */
@@ -86,21 +90,15 @@
     position: relative;
     float: left;
     height: 600px;
-    margin-left: 0;
-    width:606px;
+    width:600px;
     min-height: 1px;
 }
 .pro-main .pro-view-choose .img-icon{
-    position: fixed;
     width: 560px;
-    /* top: 97px; */
-    z-index: 1;
-    left: 1px;
-    margin-top: 0;
+    height: 560px;
 }
 .pro-view-choose .img-icon .img-wrapper{
     position: relative;
-    margin: 0;
 }
 .img-icon .img-wrapper .img-wrap{
     width: 100%;
@@ -108,11 +106,35 @@
     position: relative;
     height: 560px;
 }
-.img-wrapper .btn-left ,.img-wrapper .btn-right{
-    outline: none;
+.img-icon .img-wrapper .color2{
+    display: none;
 }
-.img-wrapper .pro-page{
+.img-wrapper .btn-right{
     outline: none;
+    position: absolute;
+    right: 0;
+    height: 69px;
+    width: 41px;
+    background: url(http://i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png) 44px 50%;
+}
+.img-wrapper .btn-right:hover{
+    background: url(http://i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png) -41px 50%;
+}
+.img-wrapper .btn-left{
+    position: absolute;
+    left: 0;
+    outline: none;
+    height: 69px;
+    width: 41px;
+    background: url(http://i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png) 83px 50%;
+}
+.img-wrapper .btn-left:hover{
+    background: url(http://i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png) 167px 50%;
+}
+.img-icon .swiper-container .swiper-scrollbar {
+    left: 30%;
+    width: 230px;
+    height: 2px;
 }
 /* 商品信息 */
 .pro-main .pro-info{
@@ -406,7 +428,7 @@
 .info-main-wrap a span{
     display: inline-block;
     margin-right: 15px;
-    line-height: 30px;
+    /* line-height: 30px; */
     margin-bottom: 10px;
 }
 .info-main-wrap a span em{

@@ -42,15 +42,20 @@
         <div class="pro-view-choose">
             <div class="img-icon">
                 <div class="img-wrapper swiper-container">
-                    <div class="img-wrap swiper-wrapper">
-                        <img class="swiper-slide" src="images/detail_img/pro-img01.jpg" alt="">
-                        <img class="swiper-slide" src="images/detail_img/pro-img02.jpg" alt="">
-                        <img class="swiper-slide" src="images/detail_img/pro-img03.jpg" alt="">
-                        <img class="swiper-slide" src="images/detail_img/pro-img04.jpg" alt="">
+                    <div class="img-wrap swiper-wrapper color1">
+                        <img class="swiper-slide" src="images/detail_img/info.png" alt="">
+                        <img class="swiper-slide" src="images/detail_img/pro-img02.png" alt="">
+                        <img class="swiper-slide" src="images/detail_img/pro-img03.png" alt="">
+                    </div>
+                    <div class="img-wrap swiper-wrapper color2">
+                        <img class="swiper-slide" src="images/detail_img/info2.png" alt="">
+                        <img class="swiper-slide" src="images/detail_img/pro-img1.png" alt="">
+                        <img class="swiper-slide" src="images/detail_img/pro-img2.png" alt="">
+                        <img class="swiper-slide" src="images/detail_img/pro-img3.png" alt="">
                     </div>
                     <div class="swiper-button-prev btn-left"></div><!--左箭头-->
                     <div class="swiper-button-next btn-right"></div><!--右箭头-->
-                    <div class="swiper-pagination pro-page"></div>
+                    <div class="swiper-scrollbar pro-page"></div>
                 </div>
                 <!-- 分页器 -->
                 <!-- 左右按钮 -->
@@ -86,18 +91,18 @@
                 <div class="list-wrap">
                     <div class="list-1 common-list">
                         <h3 class="list-title">选择版本</h3>
-                        <ul class="choose-version">
+                        <ul class="choose-version choose-1">
                             <li class="version-1">
-                                <a href="#">
-                                    <span class="name">8GB+128GB </span>
-                                    <span class="price"> 3599元 </span>
-                                </a>
+                                <!-- <a>
+                                    <span class="name">8GB+128GB</span>
+                                    <span class="price">3599元</span>
+                                </a> -->
                             </li>
                             <li class="version-2">
-                                <a href="#">
+                                <!-- <a>
                                     <span class="name">6GB+128GB </span>
                                     <span class="price"> 3199元 </span>
-                                </a>
+                                </a> -->
                             </li>
                         </ul>
                     </div>
@@ -105,16 +110,16 @@
                         <h3 class="list-title">选择颜色</h3>
                         <ul class="choose-version choose-2">
                             <li class="version-1">
-                                <a href="#">
+                                <!-- <a>
                                     <img src="images/detail_img/info.png" alt="暮光金">
                                     暮光金
-                                </a>
+                                </a> -->
                             </li>
                             <li class="version-2">
-                                <a href="#">
+                                <!-- <a>
                                     <img src="images/detail_img/info2.png" alt="暮光金">
                                     透明
-                                </a>
+                                </a> -->
                             </li>
                         </ul>
                     </div>
@@ -165,7 +170,9 @@
                     </ul>
                 </div>
                 <ul class="btn-wrap">
-                    <li><a class="add" href="#">加入购物车</a></li>
+                    <li>
+                        <!-- <a class="add" href="#">加入购物车</a> -->
+                    </li>
                     <li><a class="like" href="#">❤喜欢</a></li>
                 </ul>
                 <a href="#">
@@ -180,22 +187,51 @@
                     </span>
                 </a>
             </div>
-
         </div>
     </div>
 
     <!-- 底部 -->
     <div class="page-bottom"></div>
+
+    <!-- js引用 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.0/js/swiper.min.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/common/ajax.js"></script>
+    <script src="js/detail.js"></script>
+
     <script>
+        // 引用公共头部，脚部
         $(".top").load("public.html .nav");
         $(".top2").load("public.html .container");
         $(".page-bottom").load("public.html .footer");
-        $(".pro-info").scroll(function () {
-            // $("pro-view-choose").css({"margin-top" :"600"});
-            console.log(1);
-        });
+
+        // 设置右边滚动，左边固定
+        // $(".pro-info").scroll(function () {
+        //     // $("pro-view-choose").css({"margin-top" :"600"});
+        //     console.log(1);
+        // });
+        $(window).scroll(function() {
+		var num = document.documentElement.scrollTop;
+		if(num > 800) {
+			$('.img-icon').css({
+				position: 'absolute',
+				left: '0px',
+				top: '682px'
+			})
+		} else if(num >= 200) {
+			$('.img-icon').css({
+				position: 'fixed',
+				top: '73px',
+				left: '65px'
+			})
+		} else if(num < 200) {
+			$('.img-icon').css({
+				position: 'static',
+			})
+
+		}
+	});
+        // 商品信息左边 图片展示轮播
         var proSwiper = new Swiper('.img-wrapper', {
 	        autoplay: true,//可选选项，自动滑动
             effect: 'fade',
@@ -204,11 +240,31 @@
                 nextEl: '.btn-right',
                 prevEl: '.btn-left',
             },
-            pagination: {
-                el: '.pro-page',
-                clickable: true,
-            }
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
         })
+
+        // 向购物车传数据
+        shopList.init();
+    </script>
+
+    <!-- 导航栏固定在头部 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/posfixed.js"></script>
+    <script>
+        //   $(".pro-info").scroll(function () {
+        //     $("pro-view-choose").css({"margin-top" :"600px"});
+        //     console.log(1);
+        // });
+        $(document).ready(function () {
+                $(".pro").posfixed({
+                    distance: 0,
+                    pos: "top",
+                    type: "while",
+                    hide: false
+                });             
+        });
     </script>
 </body>
 </html>

@@ -92,8 +92,9 @@
 /* 商品信息 */
 .cart-goods{
     background: #fff;
+    display: none;
 }
-.cart-goods .col-check .icon-check{
+.cart-goods .col-check i{
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -106,11 +107,17 @@
     position: relative;
     top: -1px;
     cursor: pointer;
+    color: #333;
+}
+.cart-goods .col-check .icon-check{
+    color: #fff;
+    background-color: #fff;
+    border-color: #e0e0e0;
 }
 .cart-goods .col-check .icon-checkbox-selected {
-    /* color: #fff;
+    color: #fff;
     border-color: #ff6700;
-    background-color: #ff6700; */
+    background-color: #ff6700;
 }
 .cart-goods .list-head{
     height: 70px;
@@ -123,9 +130,10 @@
 }
 .cart-goods .col-check{
     width: 110px;
+    color: #fff;
 }
 .list-head .col-img{
-
+    width: 120px;
 }
 .list-head .col-name{
     width: 380px;
@@ -221,6 +229,7 @@
     font-size: 20px;
     -webkit-transition: all .3s;
     transition: all .3s;
+    cursor: pointer;
 }
 .change-num input{
     float: left;
@@ -232,6 +241,7 @@
     color: #424242;
     font-size: 16px;
     text-align: center;
+    outline: none;
 }
 .item-box .col-total{
     color: #ff6700;
@@ -252,6 +262,7 @@
     font-size: 16px;
     -webkit-transition: all .3s;
     transition: all .3s;
+    cursor: pointer;
 }
 .content{
     height: 30px;

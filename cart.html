@@ -43,7 +43,7 @@
                     <div class="col col-action">操作</div>
                 </div>
                 <div class="list-body">
-                    <div class="item-box">
+                    <!-- <div class="item-box">
                         <div class="item-table">
                             <div class="item-row">
                                 <div class="col col-check">
@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="content"></div>
                 <div class="cart-bar">
@@ -95,7 +95,7 @@
                         元
                     </div> -->
                     <span class="total-price">
-                        合计<em id="J_cartTotalPrice">6498</em>元
+                        合计<em id="J_cartTotalPrice">0</em>元
                     </span>
                     <a href="" class="btn">去结算</a>
                     <!-- <div class="buy-tip">
@@ -192,10 +192,17 @@
     <!-- bottom -->
     <div class="page-bottom"></div>
 
-    
+    <!-- js引用 -->
     <script src="js/jquery.js"></script>
+    <script src="js/common/ajax.js"></script>
+    <script src="js/addcart.js"></script>
+    
     <script>
+        // 引用公共脚部
         $(".page-bottom").load("public.html .footer");
+        
+        // 获取商品数据
+        shopCar.init(".page-container");
     </script>
 </body>
 

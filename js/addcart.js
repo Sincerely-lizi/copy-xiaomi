@@ -1,72 +1,156 @@
-var  shopList = (function(){
+var shopCar = (function () {
+    return {
+        init: function (ele) {
+            this.$ele = document.querySelector(ele);
+            this.$empty = document.querySelector(".cart-empty");
+            this.$goods = document.querySelector(".cart-goods");
+            this.$body = document.querySelector(".list-body");
+            
+            // console.log(this.$body);
+            this.event();
+            this.getShopListData();
+        },
+        event: function () {
+            var _this = this;
+        },
+        // 获取所有商品信息
+        getShopListData: function () {
+            var _this = this;
+            var params = {
+                success: function (data) {
+                    data = JSON.parse(data);
+                    _this.shopList = data.data;
+                    _this.getCarList();
+                    // _this.insertShopList(data.data);
+                }
+            }
+            sendAjax('json/detail.json', params);
+        },
+        // 获取加入购物车的商品信息
+        getCarList: function () {
+            // console.log(this.shopList);
+            this.carList = JSON.parse(localStorage.shopList);
+            for(var i = 0; i <  this.shopList.length; i++) {
+                for(var j = 0; j < this.carList.length; j++) {
+                    if(this.shopList[i].version == this.carList[j].version && this.shopList[i].theme == this.carList[j].theme) {
+                        this.$empty.style.display = "none";
+                        this.$goods.style.display = "block";
+                        Object.assign(this.carList[j], this.shopList[i]);//浅拷贝，两个数组融合到cart
+                        break;
+                    }
+                }
+            }
+            // console.log(this.carList);
+            this.insertCarList(this.carList);
+        },
+        // 把购物车数据渲染到页面中
+        insertCarList: function (data) {
+            var arr = [];   
+            for (var i = 0; i < data.length; i++) {
+                arr.push(
+                  `<div class="item-box">
+                     <div class="item-table">
+                       <div class="item-row">
+                        <div class="col col-check"><i id="check-box" class="iconfont icon-check">√</i></div>
+                        <div class="col col-img"><img src="${data[i].image}" alt=""></div>
+                        <h3 class="col col-name">
+                          <a href="">${data[i].name}&nbsp;${data[i].neicun}&nbsp;${data[i].color}</a>
+                        </h3>
+                        <div class="col col-price">${data[i].price}</div>
+                        <div class="col col-num">
+                          <div class="change-num">
+                            <a class="minus">-</a>
+                            <input type="text" class="goods-num" value="1">
+                            <a class="plus">+</a>
+                          </div>
+                        </div>
+                        <div class="col col-total">${data[i].price}</div>
+                        <div class="col col-action"><a class="del"><i>×</i></a></div>
+                      </div>
+                    </div>
+                   </div>`);
+            }
+            this.$body.innerHTML = arr.join('');
 
-  return {
-      init: function(ele) {
-          this.$ele = document.querySelector(ele);
-          this.getShopListData();
-          this.event();
-      },
-      event: function() {
-          var _this = this;
-          this.$ele.addEventListener('click', function(e) {
-              e = e || window.event;
-              var target = e.target || e.srcElement;
-              if(target.nodeName === 'BUTTON' && target.className === 'btn shop-btn-car') {
-                  console.log('我是购物车按钮');
-                  // 获取商品id,商品数量
-                  var id = target.getAttribute('attr-id');
-                  var count = target.parentNode.querySelector('.shop-count').value;
-                  _this.addCar(id, count);
-              }
-          }, false);
-      },
-      // 获取商品数据
-      getShopListData: function(){
-          var _this = this;
-          var params = {
-              success: function(data) {
-                  console.log(data);
-                  data = JSON.parse(data);
-                  _this.insertShopList(data.data);
-              }
-          }
-          sendAjax('json/shop.json', params);
-      },
-      // 把商品数据渲染到页面中
-      insertShopList: function(data) {
-          var arr = [];
-          for(var i = 0; i < data.length; i++) {
-              arr.push(`<div>
-                          商品名称:<span class="shop-name">${data[i].name}</span><br />
-                          数量: <input class="shop-count" type="number"  value="1" /><br />
-                          价格: <span class="shop-price">${data[i].price}</span><br />
-                          <button class="btn shop-btn-car" attr-id=${data[i].id}>加入购物车</button>
-                      </div>`);
-              
-          }
-          this.$ele.innerHTML = arr.join('');
-      },
-      // 添加商品
-      addCar(id, count) {
-          // 把商品信息保存到本地数据库
-          // 把所有添加的商品数据放到一个字段中, shopList
-          // 添加第一个商品时,本地存储没有shopList
-          // 本地存储数据格式一定是字符串格式
-          var shopList = localStorage.shopList || '[]';
-          shopList = JSON.parse(shopList);
-          for(var i = 0; i < shopList.length; i++) {
-              if(shopList[i].id === id) {
-                  // 商品已经存在
-                  shopList[i].count = Number(shopList[i].count) + Number(count);
-                  break;
-              }
-          }
-          if(i === shopList.length) {
-              // 商品不存在
-              shopList.push({id: id, count: count});
+            var $check = document.querySelector(".icon-check");  //全选框
+            var $total = document.querySelectorAll(".col-total");  //所有的总金额
+            var $checkAll = document.querySelectorAll(".icon-check");  //所有的单选框
 
-          }
-          localStorage.shopList = JSON.stringify(shopList);
-      }
-  }
+            var $item = document.querySelectorAll(".item-box");  //每条数据的DOM盒子
+            var item = $item.length;
+            document.querySelector("#J_cartTotalNum").innerHTML =  item;  //共有几件
+            document.querySelector("#J_selTotalNum").innerHTML =  item;  //已选
+            
+            var localStr = JSON.parse(localStorage.shopList); //localstorage数据转对象
+            // console.log(localStr);
+            // 删除当前数据
+            var $del = this.$body.querySelectorAll(".col-action");
+            for(let i=0;i<$del.length;i++){
+                $del[i].addEventListener('click',function(e){
+                    var e = e || window.event;
+                    var target = e.target || e.srcElement;
+                    if(target.nodeName === 'A' || target.nodeName === 'I'){
+                        $item[i].remove();  //删除DOM元素，item
+                        // console.log(data[i]);  // 购物车里的商品数据
+                        // localStorage.removeItem('shopList');
+                        localStr.splice(i,1);
+                        localStorage.shopList = JSON.stringify(localStr);
+                    }
+                },false);
+            }
+            
+            this.$body.addEventListener('click',function(e){
+                var e = e || window.event;
+                var target = e.target || e.srcElement;
+                var sum1,sum2;
+                // 数量 减、加
+                if(target.nodeName === 'A' && target.className === 'minus'){
+                    var num = target.nextElementSibling.value;
+                    num = parseInt(num);
+                    var price = target.parentElement.parentElement.previousElementSibling.innerHTML;
+                    console.log("减");
+                    if(num>1){
+                        num --;
+                        target.nextElementSibling.value = num;
+                        sum1 = price*num;// 总金额  数量*单价
+                        target.parentElement.parentElement.nextElementSibling.innerHTML = sum1;
+                    }
+                }
+                if(target.nodeName === 'A' && target.className === 'plus'){
+                    var num = target.previousElementSibling.value;
+                    num = parseInt(num);
+                    var price = target.parentElement.parentElement.previousElementSibling.innerHTML;
+                    console.log("加");
+                    num ++ ;
+                    target.previousElementSibling.value = num;
+                    sum2 = price*num;
+                    target.parentElement.parentElement.nextElementSibling.innerHTML = sum2;    
+                }
+                // 将每个商品数量num存到json数据里，或者localstorage里
+
+
+                // 单选择框
+                if(target.nodeName === 'I'&&target.id === 'check-box'){
+                    $(target).toggleClass("icon-checkbox-selected");
+                }
+            },false);
+
+            // 全选框
+            $check.addEventListener('click',function(e){
+               var sum = 0;
+               $(".icon-check").toggleClass("icon-checkbox-selected");
+               // 全选合计
+               for(let i=1;i<$total.length;i++){
+                    // console.log($checkAll[i]);
+                    if($check.className == "iconfont icon-check icon-checkbox-selected"){
+                        sum += parseInt($total[i].innerHTML);
+                        document.querySelector("#J_cartTotalPrice").innerHTML = sum;
+                    }else{
+                        document.querySelector("#J_cartTotalPrice").innerHTML = 0;
+                    }
+                } 
+            },false)
+            
+        },
+    }
 }())
