@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米账号 - 注册</title>
+		<link rel="stylesheet" href="css/register.css" />
+		<link rel="shorcut icon" href="images/index_img/favicon.ico" type="image/x-icon">
+<body>
+	<div id="big_box">
+		<div class="header"></div>
+		<h2>注册小米账号</h2>
+		<form class="check" onsubmit="return false">
+			<div class="check_one">
+				<label for="account">账户</label>
+				<input name="username" class="inp_first" id="account" type="text" placeholder="请输入手机号或邮箱"/>
+				<input type="text" name="name_X" class="name_X" placeholder="账号格式不正确">
+			</div>
+			<div class="check_two">
+				<label for="pass">密码</label>
+				<input name="password" class="inp_two" id="pass" type="password" placeholder="请输入密码"/>
+				<input type="text" name="pass_X" class="pass_X" placeholder="密码格式不正确">
+			</div>
+			<button class="btn_buttom" name="login-btn">立即注册</button>	
+		</form>
+		<div class="artical">
+				<span>注册账号即表示您同意并愿意遵守小米</span>
+				<b>用户协议</b>
+				<span>和</span>
+				<b>隐私政策</b>	
+			</div>
+	</div>
+	<div id="foot">
+		<div class="foot_box">
+			<ul class="foot_top">
+				<li><a href="">简体</a></li>
+				<li><a href="">繁体</a></li>
+				<li><a href="">English</a></li>
+				<li><a href="">常见问题</a></li>
+				<li><a href="">隐私政策</a></li>
+			</ul>
+			<ul class="foot_bottom">
+				<li><a href="">小米公司版权所有-京ICP备10046444-</a></li>
+				<li><a href=""><img src="images/login_img/dl3.jpg" alt="" /></a></li>
+				<li><a href="">京公网安备11010802020134号-京ICP证110507号</a></li>
+			</ul>
+		</div>
+	</div>
+	<script src="js/check.js"></script>
+	<script src="js/common/ajax.js"></script>
+    <script src="js/register.js"></script>
+	<script>
+		register.init('.check');
+		check.init('.check');
+	</script>
+</body>
+</html>
