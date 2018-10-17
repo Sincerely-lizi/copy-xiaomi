@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/index03.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.0/css/swiper.min.css">
-
 </head>
 
 <body>
@@ -189,8 +188,8 @@
             <h2 class="title">小米闪购</h2>
             <div class="more">
                 <div>
-                    <a class="a-left" href="#"><</a>
-                    <a href="#">></a>
+                    <a class="a-left" href="#"></a>
+                    <a href="#"></a>
                 </div>
             </div>
         </div>
@@ -1391,8 +1390,8 @@
                     <h2 class="title">为你推荐</h2>
                     <div class="more">
                         <div>
-                            <a class="a-left" href="#"><</a>
-                            <a href="#">></a>
+                            <a class="a-left" href="#"></a>
+                            <a href="#"></a>
                         </div>
                     </div>
                 </div>
@@ -1731,34 +1730,48 @@
                 </div>
                 <ul class="video-list">
                     <li class="video-item video-list-1">
-                        <a href="#" class="video-img">
+                        <a href="javascript:void(0)" class="video-img">
                             <img src="images/index_img/video01.jpg" alt="">
                         </a>
                         <h3 class="title"><a href="#">小米8，一部与众不同的手机</a></h3>
                         <p class="desc">透明探索版，将科技与美学完美结合</p>
                     </li>
                     <li class="video-item video-list-2">
-                            <a href="#" class="video-img">
+                            <a href="javascript:void(0)" class="video-img">
                                 <img src="images/index_img/video01.jpg" alt="">
                             </a>
                             <h3 class="title"><a href="#">小米8，一部与众不同的手机</a></h3>
                             <p class="desc">透明探索版，将科技与美学完美结合</p>
                     </li>
                     <li class="video-item video-list-3">
-                        <a href="#" class="video-img">
+                        <a href="javascript:void(0)" class="video-img">
                             <img src="images/index_img/video01.jpg" alt="">
                         </a>
                         <h3 class="title"><a href="#">小米8，一部与众不同的手机</a></h3>
                         <p class="desc">透明探索版，将科技与美学完美结合</p>
                     </li>
                     <li class="video-item video-list-4">
-                        <a href="#" class="video-img">
+                        <a href="javascript:void(0)" class="video-img">
                             <img src="images/index_img/video01.jpg" alt="">
                         </a>
                         <h3 class="title"><a href="#">小米8，一部与众不同的手机</a></h3>
                         <p class="desc">透明探索版，将科技与美学完美结合</p>
                     </li>
                 </ul>
+                <div class="shadow-box">
+                    <div class="modal-hd">
+                        <h3 class="title">一团火</h3>
+                        <a class="close" href="javascript: void(0);">
+                            <i class="iconfont">X</i>
+                        </a>
+                    </div>
+                    <div class="modal-bd">
+                        <iframe id="miPlayerIframe" width="880" height="536" src="//hd.mi.com/f/zt/hd/miplayer2/index.html?vurl=https://v.mifile.cn/b2c-mimall-media/c2cb94c9485243e1767d43268fb90820.mp4&amp;poster=https://i8.mifile.cn/b2c-mimall-media/e0a27677f28572b6fa8dfcf5677d6499.jpeg"
+                            frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                   
+                </div>
+                 <div class="fix-shadow"></div>
             </div>
         </div>
     </div>
@@ -1835,18 +1848,13 @@
             }
         })
 
-        // 加载公共HTML
-        // $(".top").load("public.html .nav");
-        // $(".top2").load("public.html .container");
-        // $(".page-bottom").load("public.html .footer");
-
-        // 导航栏下拉效果
+        // 导航栏下拉效果(在页面加载后执行)
         $(document).ready(function () {
             // 加载公共HTML
             $(".top").load("public.html .nav");
             $(".top2").load("public.html .container",function(){
                 var hid = document.querySelectorAll(".nav-item");
-                console.log(hid);
+                // console.log(hid);
                 $(".container-nav").on("mouseenter","li",function(){
                     $(".hidden-container").stop().slideDown();
                 });
@@ -1854,14 +1862,23 @@
                     $(".hidden-container").stop().slideUp();
                 });
             });
-            $(".page-bottom").load("public.html .footer");
-
-            
-
-            
+            $(".page-bottom").load("public.html .footer");  
         }); 
         
-
+        var $loding = document.querySelectorAll(".video-img");
+        for(let i=0;i<$loding.length;i++){
+            $loding[i].addEventListener("click",function(){
+                $(".fix-shadow").css({"display":"block"});
+                $(".shadow-box").css({"display":"block"});
+                
+            },false)
+        }
+        var $close = document.querySelector(".close");
+        console.log($close);
+        $close.addEventListener('click',function(){
+            $(".shadow-box").css({"display":"none"});
+            $(".fix-shadow").css({"display":"none"});
+        },false)
         // 右边固定栏，显示，隐藏
         var $bar = document.querySelectorAll(".bar-img");
         for(let i=0;i<$bar.length;i++){

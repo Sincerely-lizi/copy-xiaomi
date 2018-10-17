@@ -206,32 +206,27 @@
         $(".top2").load("public.html .container");
         $(".page-bottom").load("public.html .footer");
 
-        // 设置右边滚动，左边固定
-        // $(".pro-info").scroll(function () {
-        //     // $("pro-view-choose").css({"margin-top" :"600"});
-        //     console.log(1);
-        // });
-        $(window).scroll(function() {
-		var num = document.documentElement.scrollTop;
-		if(num > 800) {
-			$('.img-icon').css({
-				position: 'absolute',
-				left: '0px',
-				top: '682px'
-			})
-		} else if(num >= 200) {
-			$('.img-icon').css({
-				position: 'fixed',
-				top: '73px',
-				left: '65px'
-			})
-		} else if(num < 200) {
-			$('.img-icon').css({
-				position: 'static',
-			})
+            $(window).scroll(function () {
+                var num = document.documentElement.scrollTop;
+                if (num > 800) {
+                    $('.img-icon').css({
+                        position: 'absolute',
+                        left: '0px',
+                        top: '682px'
+                    })
+                } else if (num >= 200) {
+                    $('.img-icon').css({
+                        position: 'fixed',
+                        top: '73px',
+                        left: '65px'
+                    })
+                } else if (num < 200) {
+                    $('.img-icon').css({
+                        position: 'static',
+                    })
 
-		}
-	});
+                }
+            });
         // 商品信息左边 图片展示轮播
         var proSwiper = new Swiper('.img-wrapper', {
 	        autoplay: true,//可选选项，自动滑动
@@ -259,12 +254,12 @@
         //     console.log(1);
         // });
         $(document).ready(function () {
-                $(".pro").posfixed({
-                    distance: 0,
-                    pos: "top",
-                    type: "while",
-                    hide: false
-                });             
+            $(".pro").posfixed({
+                distance: 0,
+                pos: "top",
+                typ: "while",
+                hide: false
+            });             
         });
     </script>
 </body>
