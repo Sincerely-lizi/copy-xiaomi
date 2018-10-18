@@ -51,7 +51,7 @@ var shopCar = (function () {
                   `<div class="item-box">
                      <div class="item-table">
                        <div class="item-row">
-                        <div class="col col-check"><i id="check-box" class="iconfont icon-check">√</i></div>
+                        <div class="col col-check"><i id="check-box" class="iconfont icon-check icon-checkbox-selected">√</i></div>
                         <div class="col col-img"><img src="${data[i].image}" alt=""></div>
                         <h3 class="col col-name">
                           <a href="">${data[i].name}&nbsp;${data[i].neicun}&nbsp;${data[i].color}</a>
@@ -71,16 +71,22 @@ var shopCar = (function () {
                    </div>`);
             }
             this.$body.innerHTML = arr.join('');
-
+            var $check_box = document.querySelectorAll("#check-box");  //全部的单选框
             var $check = document.querySelector(".icon-check");  //全选框
             var $total = document.querySelectorAll(".col-total");  //所有的总金额
             var $checkAll = document.querySelectorAll(".icon-check");  //所有的单选框
 
             var $item = document.querySelectorAll(".item-box");  //每条数据的DOM盒子
             var item = $item.length;
-            document.querySelector("#J_cartTotalNum").innerHTML =  item;  //共有几件
-            document.querySelector("#J_selTotalNum").innerHTML =  item;  //已选
             
+
+            //购物车初始化（全选）
+            var sum=0;
+            for(var i=1;i<$total.length;i++){   
+                sum += parseInt($total[i].innerHTML);
+            }document.querySelector("#J_cartTotalPrice").innerHTML =sum;
+
+
             var localStr = JSON.parse(localStorage.shopList); //localstorage数据转对象
             // console.log(localStr);
             // 删除当前数据
@@ -98,7 +104,8 @@ var shopCar = (function () {
                     }
                 },false);
             }
-            
+            document.querySelector("#J_cartTotalNum").innerHTML =  item;  //共有几件
+            document.querySelector("#J_selTotalNum").innerHTML =  item;  //已选
             this.$body.addEventListener('click',function(e){
                 var e = e || window.event;
                 var target = e.target || e.srcElement;
@@ -128,19 +135,31 @@ var shopCar = (function () {
                 }
                 // 将每个商品数量num存到json数据里，或者localstorage里
 
-
                 // 单选择框
                 if(target.nodeName === 'I'&&target.id === 'check-box'){
                     $(target).toggleClass("icon-checkbox-selected");
                 }
             },false);
+            
+            //点击单选框,小计的价格到合计
+            for(let i=1;i<$total.length;i++){
+                $check_box[i-1].addEventListener('click',function(){
+                    var sum2 = parseInt(document.querySelector("#J_cartTotalPrice").innerHTML);
+                    var sum = parseInt($total[i].innerHTML);
+                    if($check_box[i-1].className == "iconfont icon-check"){
+                        document.querySelector("#J_cartTotalPrice").innerHTML = sum + sum2;
+                    }else{
+                        document.querySelector("#J_cartTotalPrice").innerHTML = sum2 -sum;
+                    }
+                },false)
+            }
 
             // 全选框
-            $check.addEventListener('click',function(e){
+            $check.addEventListener('click',function(){
                var sum = 0;
                $(".icon-check").toggleClass("icon-checkbox-selected");
                // 全选合计
-               for(let i=1;i<$total.length;i++){
+               for(var i=1;i<$total.length;i++){
                     // console.log($checkAll[i]);
                     if($check.className == "iconfont icon-check icon-checkbox-selected"){
                         sum += parseInt($total[i].innerHTML);

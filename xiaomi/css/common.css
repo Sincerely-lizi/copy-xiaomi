@@ -273,9 +273,9 @@ fix_clear{zoom:1;}/*IE兼容*/
 .container-nav .nav-item .link:hover{
     color:#ff6700;
 }
-/* .container-nav .nav-item .link:hover + .hidden-container {
+.container-nav .nav-item:hover .hidden-container {
     display: block;
-} */
+}
 
 
 .header-search{

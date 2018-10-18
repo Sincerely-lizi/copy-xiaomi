@@ -107,31 +107,125 @@
                                     <span>小米8 青春版</span>
                                 </a>
                             </div>
+                            <div class="hidden-small-box">
+                                <a href="#">
+                                    <img src="images/index_img/hidden01.png" alt="">
+                                    <span>小米8 青春版</span>
+                                </a>
+                            </div>
                         </div>
                     </li>
                     <li>
                         <a class="ul-a" href="#">笔记本 平板</a>
+                        <div class="hidden-left-pro">
+                            <div class="hidden-small-box">
+                                <a href="#">
+                                    <img src="images/index_img/hidden01.png" alt="">
+                                    <span>小米8 青春版</span>
+                                </a>
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <a class="ul-a" href="#">家电 插线板</a>
+                        <div class="hidden-left-pro">
+                            <div class="hidden-small-box">
+                                <a href="#">
+                                    <img src="images/index_img/hidden01.png" alt="">
+                                    <span>小米8 青春版</span>
+                                </a>
+                            </div>
+                            <div class="hidden-small-box">
+                                <a href="#">
+                                    <img src="images/index_img/hidden01.png" alt="">
+                                    <span>小米8 青春版</span>
+                                </a>
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <a class="ul-a" href="#">出行 穿戴</a>
+                        <div class="hidden-left-pro">
+                            <div class="hidden-small-box">
+                                <a href="#">
+                                    <img src="images/index_img/hidden01.png" alt="">
+                                    <span>小米8 青春版</span>
+                                </a>
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <a class="ul-a" href="#">智能 路由器</a>
+                        <div class="hidden-left-pro">
+                            <div class="hidden-small-box">
+                                <a href="#">
+                                    <img src="images/index_img/hidden01.png" alt="">
+                                    <span>小米8 青春版</span>
+                                </a>
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <a class="ul-a" href="#">电源 配件</a>
+                        <div class="hidden-left-pro">
+                            <div class="hidden-small-box">
+                                <a href="#">
+                                    <img src="images/index_img/hidden01.png" alt="">
+                                    <span>小米8 青春版</span>
+                                </a>
+                            </div>
+                            <div class="hidden-small-box">
+                                <a href="#">
+                                    <img src="images/index_img/hidden01.png" alt="">
+                                    <span>小米8 青春版</span>
+                                </a>
+                            </div>
+                            <div class="hidden-small-box">
+                                <a href="#">
+                                    <img src="images/index_img/hidden01.png" alt="">
+                                    <span>小米8 青春版</span>
+                                </a>
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <a class="ul-a" href="#">健康 儿童</a>
+                        <div class="hidden-left-pro">
+                            <div class="hidden-small-box">
+                                <a href="#">
+                                    <img src="images/index_img/hidden01.png" alt="">
+                                    <span>小米8 青春版</span>
+                                </a>
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <a class="ul-a" href="#">耳机 音箱</a>
+                        <div class="hidden-left-pro">
+                            <div class="hidden-small-box">
+                                <a href="#">
+                                    <img src="images/index_img/hidden01.png" alt="">
+                                    <span>小米8 青春版</span>
+                                </a>
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <a class="ul-a" href="#">生活 箱包</a>
+                        <div class="hidden-left-pro">
+                            <div class="hidden-small-box">
+                                <a href="#">
+                                    <img src="images/index_img/hidden01.png" alt="">
+                                    <span>小米8 青春版</span>
+                                </a>
+                            </div>
+                            <div class="hidden-small-box">
+                                <a href="#">
+                                    <img src="images/index_img/hidden01.png" alt="">
+                                    <span>小米8 青春版</span>
+                                </a>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -177,7 +271,8 @@
             <div class="swiper-pagination banner-pagination"></div>
         </div>
         <div class="banner-small-img">
-            <a href="detail.html" target="_blank"><img src="images/index_img/banner-small01.jpg" alt=""></a>
+            <!-- 跳转到详情页 -->
+            <a href="detail.html" target="_blank"><img src="images/index_img/banner-small04.jpg" alt=""></a>
             <a href="detail.html"><img src="images/index_img/banner-small02.jpg" alt=""></a>
             <a href="detail.html" class="last-img"><img src="images/index_img/banner-small03.jpg" alt=""></a>
         </div>
@@ -1852,16 +1947,18 @@
         $(document).ready(function () {
             // 加载公共HTML
             $(".top").load("public.html .nav");
-            $(".top2").load("public.html .container",function(){
-                var hid = document.querySelectorAll(".nav-item");
-                // console.log(hid);
-                $(".container-nav").on("mouseenter","li",function(){
-                    $(".hidden-container").stop().slideDown();
-                });
-                $(".container-nav").on("mouseleave","li",function(){
-                    $(".hidden-container").stop().slideUp();
-                });
-            });
+            $(".top2").load("public.html .container"
+            // ,function(){
+            //     var hid = document.querySelectorAll(".nav-item");
+            //     // console.log(hid);
+            //     $(".container-nav").on("mouseenter","li",function(){
+            //         $(".hidden-container").stop().slideDown();
+            //     });
+            //     $(".container-nav").on("mouseleave","li",function(){
+            //         $(".hidden-container").stop().slideUp();
+            //     });
+            // }
+        );
             $(".page-bottom").load("public.html .footer");  
         }); 
         
